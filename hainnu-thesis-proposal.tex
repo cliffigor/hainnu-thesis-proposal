@@ -1,0 +1,150 @@
+\documentclass{proposal}
+\usepackage{zhlipsum}
+
+\newcommand{\dif}{\mathrm{d}}
+
+\hainnuset{%
+	% -- 中文信息                        % 论文题目↓↓↓
+	organization  = {海南师范大学},
+	title         = {使用{\LaTeX{}}模板的开题报告撰写手册},
+	studentid     = {2019xxxxx},        % 作者学号
+	author        = {张三},              % 作者姓名
+	degreelevel   = {本科},
+	department	  = {信息科学技术学院},
+	major		  = {计算机科学与技术},
+	supervisor    = {李四},              % 指导教师姓名, 可以是两个
+	acadetitle    = {副教授},            % 导师学术头衔
+	submitdate    = {2022年9月9日}, 		% 填表日期
+	purpose       = {毕业},   			% 文档目的：毕业/学位
+	type		  = {设计},				% 文档类型：论文/设计, 由指导教师确定
+}
+\begin{document}
+\linenumbers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第一部分: 选题类别: 由下面命令的参数来自动生成，三选一.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{选题的类别}
+\ResearchType{应用研究}			%选题类别：基础研究、应用研究、应用理论研究
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第二部分: 选题依据与研究意义
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 在这里撰写选题依据
+\section{选题依据及研究意义}
+\zhlipsum[2]
+\subsection{论文概况}
+\zhlipsum[1]
+
+\subsection{自己填个小节的标题}
+\zhlipsum[1]
+
+$$\int^b_a f(x)\dif x = F(b) - F(a)$$
+
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第三部分: 研究现状与参考文献
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{选题的研究现状及主要参考文献}
+% 在这里撰写研究现状
+
+\subsection{问题的起源}
+\zhlipsum[1]
+
+\subsection{新近进展}
+
+\zhlipsum[1]
+
+\subsection{存在的问题}
+
+\zhlipsum[1]
+
+\subsection{自己写合适的小节标题吧}
+
+\zhlipsum[1]
+
+\begin{itemize}
+	\item[\ding{172}] 期刊论文, 例如\cite{XmDeng2007,Brown1984,ZHY2017RS,ZHY2012manifold}以及\cite{Wing2006CT}
+	\item[\ding{173}] 会议论文, 例如\cite{Geyer1999,Branislav2004}
+	\item[\ding{174}] 专利, 例如\cite{LongMA2015P}
+	\item[\ding{175}] 书籍, 例如\cite{CDIO2014,ZHY2022}
+	\item[\ding{176}] 在线资源, 例如\cite{SFMedu,OpenMVS,HainnuThesis}
+	\item[\ding{177}] 技术报告，例如\cite{Sussman2005}
+	\item[\ding{178}] 学位论文，例如\cite{ZHY2002,Xue2006,lzj-zhy-MS-thesis-2018,zls-zhy-MS-thesis-2016,zhy-2011-disertation}
+
+\end{itemize}
+\ckwx
+\bibliography{reference.bib}
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第四部分: 研究内容/创新点/重难点与研究思路
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{拟研究的主要内容、创新点、重难点及研究思路}
+% 在这里撰写创新点
+
+\subsection{主要内容}
+
+\zhlipsum[2]
+
+\subsection{创新点(独创性，原创性)}
+
+\zhlipsum[1]
+
+\subsection{研究/开发/设计/...的重点/难点}
+
+\zhlipsum[1]
+
+\subsection{解决问题的思路/技术路线/构思}
+
+\zhlipsum[1]
+
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第五部分: 研究进程安排
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{研究进程安排}
+% 在这里撰写研究进程安排
+
+这个部分适合列条目或用表格说事，这样比较简明扼要.
+
+
+
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第六部分: 其它说明
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{其他说明}
+% 在这里撰写其他说明
+
+这部分因人而已，可以有，也可以无.
+
+
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+\section{指导教师意见}
+% 在这里撰写指导教师意见
+
+这部分留给指导教师写审核意见并签字. 
+\begin{flushright}
+	指导教师签名：\makebox[6em][l]{\leaderSign}\\
+	\leaderSignDate
+\end{flushright}
+
+
+
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+\section{专业毕业论文指导小组意见}
+% 在这里撰写专业毕业论文指导小组意见
+\vspace*{5cm}
+
+
+\begin{flushright}
+	毕业论文与毕业设计指导小组组长签字：\makebox[6em][l]{\leaderSign}\\
+	\leaderSignDate
+\end{flushright}
+
+
+\end{document}

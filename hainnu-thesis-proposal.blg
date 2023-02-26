@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2021/W32TeX)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: hainnu-thesis-proposal.aux
+The style file: gbt7714-numerical.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 150 items from 100.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: reference.bib
+Warning--empty year in OpenMVS
+Warning--empty year in OpenMVS
+Warning--empty author in OpenMVS
+You've used 19 entries,
+            5246 wiz_defined-function locations,
+            1140 strings with 10419 characters,
+and the built_in function-call counts, 85833 in all, are:
+= -- 2471
+> -- 8682
+< -- 11618
++ -- 3679
+- -- 777
+* -- 750
+:= -- 12388
+add.period$ -- 63
+call.type$ -- 19
+change.case$ -- 71
+chr.to.int$ -- 3132
+cite$ -- 23
+duplicate$ -- 458
+empty$ -- 1374
+format.name$ -- 374
+if$ -- 22269
+int.to.chr$ -- 1
+int.to.str$ -- 20
+missing$ -- 0
+newline$ -- 117
+num.names$ -- 54
+pop$ -- 3143
+preamble$ -- 1
+purify$ -- 19
+quote$ -- 0
+skip$ -- 8834
+stack$ -- 0
+substring$ -- 4389
+swap$ -- 23
+text.length$ -- 263
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 219
+warning$ -- 3
+while$ -- 330
+width$ -- 0
+write$ -- 269
+(There were 3 warnings)

@@ -1,0 +1,252 @@
+\documentclass{proposal}
+\usepackage{zhlipsum}
+\usepackage{xhfill}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancybox}
+
+\newcommand{\singleSymbol}[2]{\includegraphics[width=0.8cm]{./picture/#1-S#2.png}}
+\newcommand{\symbolTable}[1]{
+	\includegraphics[width=0.8cm]{./picture/#1-S0.png},~
+	\includegraphics[width=0.8cm]{./picture/#1-S1.png},~
+	\includegraphics[width=0.8cm]{./picture/#1-S2.png},~
+	\includegraphics[width=0.8cm]{./picture/#1-S3.png},~
+	\includegraphics[width=0.8cm]{./picture/#1-S4.png},~
+	\includegraphics[width=0.8cm]{./picture/#1-S5.png},~
+	\includegraphics[width=0.8cm]{./picture/#1-S6.png},~
+	\includegraphics[width=0.8cm]{./picture/#1-S7.png},~
+	\includegraphics[width=0.8cm]{./picture/#1-S8.png},~
+	\includegraphics[width=0.8cm]{./picture/#1-S9.png}~
+}
+
+\newcommand{\dif}{\mathrm{d}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\hainnuset{%
+	% -- 中文信息                        % 论文题目↓↓↓
+	organization  = {海南师范大学},
+	title         = {基于视觉注意力的认知信息处理能力\\测验量表的设计与实现},
+	studentid     = {201924101504},        % 作者学号
+	author        = {陈潇},              % 作者姓名
+	degreelevel   = {本科},
+	department	  = {信息科学技术学院},
+	major		  = {计算机科学与技术},		%专业
+	supervisor    = {张鸿燕},              % 指导教师姓名, 可以是两个
+	acadetitle    = {副教授},            	% 导师学术头衔
+	submitdate    = {\today}, 				% 填表日期
+	purpose       = {毕业},   			% 文档目的：毕业/学位
+	type		  = {论文},				% 文档类型：论文/设计, 由指导教师确定
+}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第一部分: 选题类别: 由下面命令的参数来自动生成，三选一.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{选题的类别}
+\ResearchType{应用研究}			%选题类别：基础研究、应用研究、应用理论研究
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第二部分: 选题依据与研究意义
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 在这里撰写选题依据
+\section{选题依据及研究意义}
+\subsection{选题依据}
+“因材施教”一直是教育领域一个重要、关键的问题，并且一直受到学者、教师和教育工作者的广泛关注。其中，很多教育家和心理学家通过研究，提出了各种不同的理论和方法，以便更好地评估学生的特点，并为他们量身定制合适的教学方案。除了教育方面外，各行各业也都有着人才选拔、评估、培训的实际问题：军队的选拔与评估；警察、消防员等公共安全领域的选拔与评估；各类运动员的选拔与评估；职业潜水员的选拔与评估$\cdots\cdots$找到合适的方法，能使人员的选拔与评估事半功倍。
+
+如今常见的人员选拔与评估测验方法有：智力测验、职业测评、心理测评等方法，而其中心理测评能够帮助识别候选人的优势和弱点，深入了解候选人的心理状况和性格特点，从而帮助招聘人员更准确地了解候选人的优势和弱点，确定候选人是否适合担任某个职位。
+
+心理测评中，\textit{认知信息处理能力测试}(Test of Cognitive Information Processing Ability, TCIPA)可以量化地评估个体的认知信息处理能力，与传统的面试、自我陈述等方法相比，认知信息处理能力测试可以用于测量被试者包括记忆、注意、思维和问题解决等方面的\textit{认知信息处理能力}(Cognitive Information Processing Ability, CIPA)，认知能力测试对被测表现的预测效果超过了其它各种方法，特别是在评估学术、职业和临床能力方面\cite{clarkConstructingValidityBasic2016,hunterCognitiveAbilityCognitive1986}。认知信息处理能力测试能够通过科学的实验设计和数据分析，评估个体的认知能力，帮助我们更好地了解人类认知能力的本质，从而更好地评估个体的认知能力和潜力\cite{meehlFactorsTaxaTraits1992}。
+
+认知信息处理能力测试能够定量地描述个体的认知信息处理能力，从数据科学的角度通过数据分析得出可解释的结论，为人员的评估、选拔与训练提出有参考价值的结论。但如何设计合理的测验量表与数据采集方案，获得有效且可靠的人脑活动实验样本，从中辨识出被测的认知处理信息能力，值得我们关注。由于健康的正常人获取的信息中视觉信息占据了主要部分，研究基于视觉注意力的认知信息处理能力测试就具有重要意义。
+
+\subsection{研究意义}
+本研究拟实现的基于视觉注意力的认知信息处理能力测验量表能为认知信息处理能力测验相关实验提供新的技术手段，能够为教育、体育、国防、人力资源等领域的人才选拔及评估提供新工具、数据采集的新方法。
+
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第三部分: 研究现状与参考文献
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{选题的研究现状及主要参考文献}
+% 在这里撰写研究现状
+
+\subsection{问题的起源}
+早在1938年，Thurstone\cite{eysenckPRIMARYMENTALABILITIES1939}提出了一种新的测试方式，对认知能力进行了分析，并提出了七种基本认知能力：空间能力、数值推理、词汇理解、记忆、知觉速度、词语流畅度和推理。这些认知能力成为后来的认知能力测试的基础。这种方法被称为"Primary Mental Abilities"，它为认知能力测试的发展奠定了基础。
+
+随着计算机技术的发展，认知能力测试也随之发展，出现了各种计算机化的测试，例如Stroop测试、反应时间测试、空间记忆测试等等。这些测试可以更加准确地测量认知过程和能力，并且更容易进行量化和数据分析。各行各业也都采用认知能力测试进行预测结果：教育\cite{roordaInfluenceAffectiveTeacher2011}、军事\cite{carrettaConsistencyRelationsCognitive2014}、医疗、人力资源、公共安全等。
+
+1980年3月，苏州大学的王文英、张卿华教授为了做好选才工作，在苏联生理学家巴甫洛夫创立的高级神经活动类型学说的启发下，设计了一种非文字的“神经类型测试表”，该表经近3万人测试，证明其是一张可揭示出神经系统所表现出的基本特性的量表，并且是一张对儿童，少年，成人都适用的神经类型测试表。该表是中国心理学领域第一张实用的心理测量量表与评价工具。1980年8月，王文英、张卿华教授改进了该表(简称“80.8测试表”)\cite{80-8original,wang198380}，此表由不常见的非文字符号组成，避免了“内田——克列别林测算法”中后天学习的影响，经大约1万人测试之后，证明效果满意。
+\subsection{新近进展}
+目前，80-8量表已发展至第5代系统，多年来，该表为我国运动员选材、教育、特种士兵选拔等领域提供了团体测验的工具，受测人数达到了10多万人, 获得了近 10 万人的有效测验数据, 而其第3代到与第5代系统则逐步实现了数据分析的计算机自动处理。文献\cite{80-8book}收集了关于80-8量表法的一些相关应用研究。该表已经被列入载人航天“Mars500”研究课题并被编入“神州九号”航天员手册中。
+
+近年来，张鸿燕博士与李敬强博士针对民航领域空中交通管制员与飞行员的评估与选拔，设计了一套新的神经类型测试系统\cite{zhang2017r,li2018systematic}，该系统采用了新的非语义符号表$\mathcal{A}^{\mathrm{CAUC}}$以及新的量表$\mathbf{\tau}_{\mathrm{CAUC}}$，采用计算机软件测验的方式，收集了判别每个符号序列所需要的\textit{反应时}(reaction time)，针对初始空中交通管制员做了测验和数据分析,验证了其有效性并取得了良好的测评成效。
+%\vskip 1cm
+
+{
+
+	\begin{figure}[htbp]
+\begin{minipage}{0.49\linewidth}
+	\centering
+	\includegraphics[width=0.9\linewidth,height=0.5\linewidth]{tcipa1}
+	\caption{80-8测试表}
+	\label{chutian1}%文中引用该图片代号
+\end{minipage}
+%\qquad
+\begin{minipage}{0.49\linewidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{tcipa2}
+	\caption{民航大学量表}
+	\label{chutian2}%文中引用该图片代号
+\end{minipage}
+	\end{figure}
+
+}
+
+\subsection{存在的问题}
+四十多年来，80-8神经类型量表及其泛型取得了广泛的应用且卓越成效，但是还存在着一些深层次上的不足：
+
+\begin{enumerate}
+\item 缺少量表的一般生成理论
+
+无论是$\mathrm{NTT_1}$还是$\mathrm{NTT_2}$系统，都只使用了一套固定的量表，即使是$\mathrm{NTT1}$系统的更新换代过程中，本质上也只是对尾部符号个数的裁剪;而$\mathrm{NTT2}$系统中，使用的一直是一套固定不变的符号表，无法对比得出不同符号表之间造成的实验差异，没有对语义符号表和非语义符号表的区别进行探究。
+
+\item 缺少量表的自动生成算法
+
+以上两者系统，量表的生成一直是由人工经验设定的，费时费力，并且存在“只有真题而没有模拟题”的情况，缺少灵活可用的“训练”序列可能导致被测者在不理解测试规则的情况下开始测试，造成不必要的人力、财力、物力的浪费。
+\end{enumerate}
+
+
+\ckwx
+\bibliography{reference.bib,CognitiveAbilityTests.bib}
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第四部分: 研究内容/创新点/重难点与研究思路
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{拟研究的主要内容、创新点、重难点及研究思路}
+% 在这里撰写创新点
+
+\subsection{主要内容}
+\begin{itemize}
+	\item TCIPA量表的数学形式化理论的建立，具体任务有：
+	\begin{itemize}
+		\item 符号表的数学描述
+		\item 确定量表的组成元素、关键参数
+		\item 符号之间转换映射的设计
+		\item 量表的转换方法
+	\end{itemize}
+	
+	\item 基于MCMC方法的TCIPA测试符号序列自动生成算法的设计与实现，具体任务有：
+	\begin{itemize}
+		\item 离散时间有限状态 Markov 链参数的确定
+		\item 符号序列生成算法的设计、实现、验证和确认
+	\end{itemize}
+	\item TCIPA原型数据采集子系统设计，具体任务有：
+	\begin{itemize}
+		\item 设计出测试所用的各个模块的GUI界面：登录、管理员定制菜单、量表显示等
+		\item 设计出一个动作按钮区域, 用三个区分度明显、容易识别的按钮对应 “视-动条件反射” 活动中大脑对视觉信息进行加工、决策和执行动作的结果
+		\item 根据生成的符号序列与符号间的关联，自动生成理想决策序列
+		\item 实验数据的记录。根据用户对按钮进行的操作，记录用户的决策序列$\{y_{n}\}$以及反应时序列$\{x_{n}\}$，其中$y_n\in\{\mathrm{Y},\mathrm{N},\mathrm{I}\}$
+	\end{itemize}
+
+\end{itemize}
+\subsection{创新点(独创性，原创性)}
+\begin{enumerate}
+	\item 不同符号表之间能够相互转换
+	\item 自动生成TCIPA测试符号序列
+\end{enumerate}
+
+\subsection{设计的重点/难点}
+ \subsubsection{重点}
+ 符号表的等价表示和相互转换
+ \subsubsection{难点}
+ TCIPA符号序列自动生成算法的设计
+\subsection{解决问题的思路/技术路线/构思}
+\subsubsection{符号表的数学描述}
+\begin{enumerate}
+	\item 对于一个符号表，$\mathcal{A}=\{S_0,S_1,\cdots,S_{r-1}\}$，其含有$r=\left|\mathcal{A}\right|$个图元。
+	\item 通常，具体的非语言符号按三种样式设计, 对应于神经活动的三种机理解释。在一次测验中，可以静态或动态地将符号表$\mathcal{A}$划分为三个部分：平凡(trivial)符号集$\mathcal{A}_{\mathrm{t}}$、阳性(positive)符号集$\mathcal{A}_{\mathrm{p}}$和特殊(special)符号集$\mathcal{A}_{\mathrm{s}}$。
+	$$
+	\mathcal{A}=\mathcal{A}_{\mathrm{t}} \cup \mathcal{A}_{\mathrm{p}} \cup \mathcal{A}_{\mathrm{s}},~\left|\mathcal{A}_{\mathrm{t}}\right| = r_\mathrm{t},~\left|\mathcal{A}_{\mathrm{p}}\right| = r_\mathrm{p},~ \left|\mathcal{A}_{\mathrm{s}}\right| = r_\mathrm{s},~r=r_\mathrm{t}+r_\mathrm{p}+r_\mathrm{s}
+	$$
+\end{enumerate}
+
+将符号表数学描述，方便符号表的等价表示和相互转换。
+
+\subsubsection{符号表的等价表示和相互转换}
+任意具体的符号表中的图元都可以用数字进行描述，即$$\mathcal{A}^{\mathrm{digit}}=\{S_0,S_1,\cdots,S_{r-1}\}=\{0,1,\cdots,r-1\}$$
+
+利用视觉表示映射，可以将数字符号表$\mathcal{A}^{\mathrm{digit}}$映射为图像符号表$\mathcal{A}^{\alpha}$，记这种表示映射为$\Phi_{\alpha}$:
+$$\Phi_{\alpha}: \mathcal{A}^{\mathrm{digit}}\rightarrow\mathcal{A}^{\alpha}=\{S_0^{\alpha},S_1^{\alpha},\cdots,S_{r-1}^{\alpha}\}$$
+称其逆映射$\Phi_{\alpha}^{-1}$为编码映射，它将视觉图像符号变成数字符号:
+$$\Phi_{\alpha}^{-1}: \mathcal{A}^{\alpha}\rightarrow\mathcal{A}^{\mathrm{digit}}$$
+
+两种具体的符号表$\mathcal{A}^{\alpha}$和$\mathcal{A}^{\beta}$之间可以通过转换映射实现:
+$$\Psi_{\beta}^{\alpha}=\Phi_{\beta} \circ \Phi_{\alpha}^{-1}: \mathcal{A}^{\alpha} \rightarrow \mathcal{A}^{\beta}, \quad S_{i}^{\alpha} \mapsto S_{i}^{\beta}$$
+{
+	\centering
+	\includegraphics[width=0.8\textwidth]{SymbolMapping}
+	\captionof{figure}{符号表的等价表示和相互转换}
+}
+\subsubsection{TCIPA符号序列自动生成算法}
+由于表示映射和编码映射的概念，能够把布局相同、符号表不同的两张量表互相转换，则生成量表的问题转化为了一个数学问题：生成符合要求的数字序列。
+
+可以采用离散时间有限状态Markov链生成所需要的数字序列：对于数字符号表$\mathcal{A}^{\mathrm{digit}}$，根据符号表分类的理论，将三类符号之间的转移概率记为$\gamma_{ij}$，其中下标$i,j\in \{\mathrm{t},\mathrm{p},\mathrm{s}\}$分别代表平凡(trivial)、阳性(positive)、特殊(special)三种符号类型。
+
+{
+	\centering
+	\includegraphics[width=0.4\textwidth]{stateTrans.png}
+	\captionof{figure}{状态转移矩阵}
+}
+
+对于一个有$r$个图元的符号表$\mathcal{A}$，如果按照等概率的方式出现，符号之间的转移概率也为等概率。可以得到一个$r$阶的概率矩阵$\mathbf{P}=(p_{ij})_{r\times r}$，其中$p_{ij}=\Pr\{a_j=s_j|a_i=s_i\}$表示从状态$s_i$转移到状态$s_j$的概率。
+
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第五部分: 研究进程安排
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{研究进程安排}
+% 在这里撰写研究进程安排
+
+这个部分适合列条目或用表格说事，这样比较简明扼要.
+
+
+
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 第六部分: 其它说明
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{其他说明}
+% 在这里撰写其他说明
+
+无
+
+
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+\section{指导教师意见}
+% 在这里撰写指导教师意见
+
+这部分留给指导教师写审核意见并签字. 
+\begin{flushright}
+	指导教师签名：\makebox[6em][l]{\leaderSign}\\
+	\leaderSignDate
+\end{flushright}
+
+
+
+\SectionEndLine				   %每一小节结束时，使用此命令生成表格结束的横线
+\section{专业毕业论文指导小组意见}
+% 在这里撰写专业毕业论文指导小组意见
+\vspace*{3cm}
+
+\begin{flushright}
+	毕业论文与毕业设计指导小组组长签字：\makebox[6em][l]{\leaderSign}\\
+	\leaderSignDate
+
+\end{flushright}
+
+\end{document}
